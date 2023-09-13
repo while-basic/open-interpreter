@@ -1,7 +1,7 @@
 """
 Right off the bat, to any contributors (a message from Killian):
 
-First of all, THANK YOU. Open Interpreter is ALIVE, ALL OVER THE WORLD because of YOU.
+First of all, THANK YOU. Celaya Interpreter is ALIVE, ALL OVER THE WORLD because of YOU.
 
 While this project is rapidly growing, I've decided it's best for us to allow some technical debt.
 
@@ -11,7 +11,7 @@ In my opinion **this is critical** to keep up with the pace of demand for this p
 
 At the same time, I plan on pushing a significant re-factor of `interpreter.py` and `code_interpreter.py` ~ September 11th.
 
-After the re-factor, Open Interpreter's source code will be much simpler, and much more fun to dive into.
+After the re-factor, Celaya Interpreter's source code will be much simpler, and much more fun to dive into.
 
 Especially if you have ideas and **EXCITEMENT** about the future of this project, chat with me on discord: https://discord.gg/6p3fD6rBVm
 
@@ -62,7 +62,7 @@ def cli(interpreter):
   USE_AZURE = os.getenv('INTERPRETER_CLI_USE_AZURE', 'False') == 'True'
 
   # Setup CLI
-  parser = argparse.ArgumentParser(description='Chat with Open Interpreter.')
+  parser = argparse.ArgumentParser(description='Chat with Celaya Interpreter.')
   
   parser.add_argument('-y',
                       '--yes',
@@ -116,13 +116,13 @@ def cli(interpreter):
   
   parser.add_argument('--version',
                       action='store_true',
-                      help='display current Open Interpreter version')
+                      help='display current Celaya Interpreter version')
 
   args = parser.parse_args()
 
 
   if args.version:
-    print("Open Interpreter", pkg_resources.get_distribution("open-interpreter").version)
+    print("Celaya Interpreter", pkg_resources.get_distribution("open-interpreter").version)
     return
 
   if args.max_tokens:
@@ -142,7 +142,7 @@ def cli(interpreter):
     # Temporarily, for backwards (behavioral) compatability, we've moved this part of llama_2.py here.
     # This way, when folks hit interpreter --local, they get the same experience as before.
     
-    rprint('', Markdown("**Open Interpreter** will use `Code Llama` for local execution. Use your arrow keys to set up the model."), '')
+    rprint('', Markdown("**Celaya Interpreter** will use `Code Llama` for local execution. Use your arrow keys to set up the model."), '')
         
     models = {
         '7B': 'TheBloke/CodeLlama-7B-Instruct-GGUF',
@@ -182,7 +182,7 @@ def cli(interpreter):
     # Temporarily, for backwards (behavioral) compatability, we've moved this part of llama_2.py here.
     # This way, when folks hit interpreter --falcon, they get the same experience as --local.
     
-    rprint('', Markdown("**Open Interpreter** will use `Falcon` for local execution. Use your arrow keys to set up the model."), '')
+    rprint('', Markdown("**Celaya Interpreter** will use `Falcon` for local execution. Use your arrow keys to set up the model."), '')
         
     models = {
         '7B': 'TheBloke/CodeLlama-7B-Instruct-GGUF',

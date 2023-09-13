@@ -1,7 +1,7 @@
 """
 Right off the bat, to any contributors (a message from Killian):
 
-First of all, THANK YOU. Open Interpreter is ALIVE, ALL OVER THE WORLD because of YOU.
+First of all, THANK YOU. Celaya Interpreter is ALIVE, ALL OVER THE WORLD because of YOU.
 
 While this project is rapidly growing, I've decided it's best for us to allow some technical debt.
 
@@ -11,7 +11,7 @@ In my opinion **this is critical** to keep up with the pace of demand for this p
 
 At the same time, I plan on pushing a significant re-factor of `interpreter.py` and `code_interpreter.py` ~ September 11th.
 
-After the re-factor, Open Interpreter's source code will be much simpler, and much more fun to dive into.
+After the re-factor, Celaya Interpreter's source code will be much simpler, and much more fun to dive into.
 
 Especially if you have ideas and **EXCITEMENT** about the future of this project, chat with me on discord: https://discord.gg/6p3fD6rBVm
 
@@ -36,7 +36,7 @@ def get_hf_llm(repo_id, debug_mode, context_window):
     if "TheBloke/CodeLlama-" not in repo_id:
       # ^ This means it was prob through the old --local, so we have already displayed this message.
       # Hacky. Not happy with this
-      print('', Markdown(f"**Open Interpreter** will use `{repo_id}` for local execution. Use your arrow keys to set up the model."), '')
+      print('', Markdown(f"**Celaya Interpreter** will use `{repo_id}` for local execution. Use your arrow keys to set up the model."), '')
 
     raw_models = list_gguf_files(repo_id)
     
@@ -88,7 +88,7 @@ def get_hf_llm(repo_id, debug_mode, context_window):
       n_gpu_layers = 0
 
     # Get user data directory
-    user_data_dir = appdirs.user_data_dir("Open Interpreter")
+    user_data_dir = appdirs.user_data_dir("Celaya Interpreter")
     default_path = os.path.join(user_data_dir, "models")
 
     # Ensure the directory exists

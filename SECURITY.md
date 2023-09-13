@@ -1,4 +1,4 @@
-# Open Interpreter Security Policy
+# Celaya Interpreter Security Policy
 
 We take security seriously. Responsible reporting and disclosure of security
 vulnerabilities is important for the protection and privacy of our users. If you

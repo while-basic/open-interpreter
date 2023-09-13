@@ -1,6 +1,6 @@
 # Code-Llama on MacOS (Apple Silicon)
 
-When running Open Interpreter on macOS with Code-Llama (either because you did
+When running Celaya Interpreter on macOS with Code-Llama (either because you did
 not enter an OpenAI API key or you ran `interpreter --local`) you may want to
 make sure it works correctly by following the instructions below.
 

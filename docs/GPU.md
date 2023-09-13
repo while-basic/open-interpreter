@@ -1,6 +1,6 @@
 # Local Language Models with GPU Support
 
-Open Interpreter can be used with local language models, however these can be
+Celaya Interpreter can be used with local language models, however these can be
 rather taxing on your computer's resources. If you have an NVIDIA GPU, you may
 benefit from offloading some of the work to your GPU.
 
@@ -63,7 +63,7 @@ benefit from offloading some of the work to your GPU.
     ```
 
     If you see something similar to this, then you are ready to use your GPU
-    with Open Interpreter.
+    with Celaya Interpreter.
 
     ```
     ggml_init_cublas: found 1 CUDA devices:
@@ -77,7 +77,7 @@ benefit from offloading some of the work to your GPU.
     False
     ```
 
-7.  Finally, run the following command to use Open Interpreter with a local
+7.  Finally, run the following command to use Celaya Interpreter with a local
     language model with GPU support.
 
     ```
@@ -149,7 +149,7 @@ benefit from offloading some of the work to your GPU.
     ```
 
     If you see something similar to this, then you are ready to use your GPU
-    with Open Interpreter.
+    with Celaya Interpreter.
 
     ```
     ggml_init_cublas: found 1 CUDA devices:
@@ -163,7 +163,7 @@ benefit from offloading some of the work to your GPU.
     False
     ```
 
-8.  Finally, run the following command to use Open Interpreter with a local
+8.  Finally, run the following command to use Celaya Interpreter with a local
     language model with GPU support.
 
     ```

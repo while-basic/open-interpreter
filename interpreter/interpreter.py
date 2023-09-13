@@ -1,7 +1,7 @@
 """
 Right off the bat, to any contributors (a message from Killian):
 
-First of all, THANK YOU. Open Interpreter is ALIVE, ALL OVER THE WORLD because of YOU.
+First of all, THANK YOU. Celaya Interpreter is ALIVE, ALL OVER THE WORLD because of YOU.
 
 While this project is rapidly growing, I've decided it's best for us to allow some technical debt.
 
@@ -11,7 +11,7 @@ In my opinion **this is critical** to keep up with the pace of demand for this p
 
 At the same time, I plan on pushing a significant re-factor of `interpreter.py` and `code_interpreter.py` ~ September 11th.
 
-After the re-factor, Open Interpreter's source code will be much simpler, and much more fun to dive into.
+After the re-factor, Celaya Interpreter's source code will be much simpler, and much more fun to dive into.
 
 Especially if you have ideas and **EXCITEMENT** about the future of this project, chat with me on discord: https://discord.gg/6p3fD6rBVm
 
@@ -71,7 +71,7 @@ missing_api_key_message = """> OpenAI API key not found
 
 To use `GPT-4` (recommended) please provide an OpenAI API key.
 
-To use `Code-Llama` (free but less capable) press `enter`.
+To use `Code-Llama` (free, but less capable) press `enter`.
 """
 
 # Message for when users don't have an OpenAI API key.
@@ -83,7 +83,7 @@ To use `Code-Llama` (free but less capable) press `enter`.
 """
 
 confirm_mode_message = """
-**Open Interpreter** will require approval before running code. Use `interpreter -y` to bypass this.
+**Celaya Interpreter** will require approval before running code. Use `interpreter -y` to bypass this.
 
 Press `CTRL-C` to exit.
 """
@@ -97,7 +97,7 @@ class Interpreter:
     self.api_key = None
     self.auto_run = False
     self.local = False
-    self.model = "gpt-4"
+    self.model = "gpt-3.5"
     self.debug_mode = False
     self.api_base = None # Will set it to whatever OpenAI wants
     self.context_window = 2000 # For local models only
@@ -121,9 +121,9 @@ class Interpreter:
     # (blocks are visual representation of messages on the terminal)
     self.active_block = None
 
-    # Note: While Open Interpreter can use Llama, we will prioritize gpt-4.
+    # Note: While Celaya Interpreter can use Llama, we will prioritize gpt-4.
     # gpt-4 is faster, smarter, can call functions, and is all-around easier to use.
-    # This makes gpt-4 better aligned with Open Interpreters priority to be easy to use.
+    # This makes gpt-4 better aligned with Celaya Interpreters priority to be easy to use.
     self.llama_instance = None
 
   def cli(self):
@@ -299,7 +299,7 @@ class Interpreter:
             f"> Failed to install `{self.model}`.",
             f"\n\n**Common Fixes:** You can follow our simple setup docs at the link below to resolve common errors.\n\n```\nhttps://github.com/KillianLucas/open-interpreter/tree/main/docs\n```",
             f"\n\n**If you've tried that and you're still getting an error, we have likely not built the proper `{self.model}` support for your system.**",
-            "\n\n*( Running language models locally is a difficult task!* If you have insight into the best way to implement this across platforms/architectures, please join the Open Interpreter community Discord and consider contributing the project's development. )",
+            "\n\n*( Running language models locally is a difficult task!* If you have insight into the best way to implement this across platforms/architectures, please join the Celaya Interpreter community Discord and consider contributing the project's development. )",
             "\n\nPress enter to switch to `GPT-4` (recommended)."
           ])))
           input()
@@ -331,7 +331,7 @@ class Interpreter:
       welcome_message += f"\n> Model set to `{self.model}`"
 
     # If not auto_run, tell the user we'll ask permission to run code
-    # We also tell them here how to exit Open Interpreter
+    # We also tell them here how to exit Celaya Interpreter
     if not self.auto_run:
       welcome_message += "\n\n" + confirm_mode_message
 
@@ -428,7 +428,7 @@ class Interpreter:
           # This way, when folks hit interpreter --local, they get the same experience as before.
           import inquirer
 
-          print('', Markdown("**Open Interpreter** will use `Code Llama` for local execution. Use your arrow keys to set up the model."), '')
+          print('', Markdown("**Celaya Interpreter** will use `Code Llama` for local execution. Use your arrow keys to set up the model."), '')
 
           models = {
               '7B': 'TheBloke/CodeLlama-7B-Instruct-GGUF',
@@ -495,7 +495,7 @@ class Interpreter:
               # This way, when folks hit interpreter --local, they get the same experience as before.
               import inquirer
 
-              print('', Markdown("**Open Interpreter** will use `Code Llama` for local execution. Use your arrow keys to set up the model."), '')
+              print('', Markdown("**Celaya Interpreter** will use `Code Llama` for local execution. Use your arrow keys to set up the model."), '')
 
               models = {
                   '7B': 'TheBloke/CodeLlama-7B-Instruct-GGUF',
@@ -817,7 +817,7 @@ class Interpreter:
         if chunk["choices"][
             0]["finish_reason"] == "function_call" or llama_function_call_finished:
           # Time to call the function!
-          # (Because this is Open Interpreter, we only have one function.)
+          # (Because this is Celaya Interpreter, we only have one function.)
 
           if self.debug_mode:
             print("Running function:")
@@ -834,7 +834,7 @@ class Interpreter:
             code = self.active_block.code
 
             # Prompt user
-            response = input("  Would you like to run this code? (y/n)\n\n  ")
+            response = input("  May I run this code? (y/n)\n\n  ")
             print("")  # <- Aesthetic choice
 
             if response.strip().lower() == "y":
@@ -918,4 +918,4 @@ class Interpreter:
 
   def _print_welcome_message(self):
     current_version = pkg_resources.get_distribution("open-interpreter").version
-    print(f"\n Hello, Welcome to [bold]● Open Interpreter[/bold]. (v{current_version})\n")
+    print(f"\n Hello, Welcome to [bold]● Celaya's Interpreter [/bold]. (v{current_version})\n")

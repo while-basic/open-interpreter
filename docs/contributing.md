@@ -1,4 +1,4 @@
-# Contributing to Open Interpreter 
+# Contributing to Celaya Interpreter 
 
 Thank you for your interest in contributing! As an open source project, we rely on developers like you to make conversational AI accessible.
 
@@ -17,7 +17,7 @@ As such, we aim to keep the codebase simplified rather than overly complex. Our 
 If you encounter a bug or have a brilliant feature in mind, don't hesitate to [open a new issue](https://github.com/KillianLucas/open-interpreter/issues/new/choose). To ensure a swift and effective response, please provide the following:
 
 - **Bug Reports:** Include detailed steps to reproduce the issue, along with specifics about your operating system and Python version, with screenshots and code/error snippets if required.
-- **Feature Requests:** Provide a comprehensive explanation of how your idea benefits Open Interpreter and its community.
+- **Feature Requests:** Provide a comprehensive explanation of how your idea benefits Celaya Interpreter and its community.
 
 ## Contributing Code
 
@@ -33,7 +33,7 @@ We welcome code contributions through pull requests. Here are some guidelines:
 
 - We will review PRs when possible and work with you to integrate your contribution. Please be patient as reviews take time. 
 
-- Once approved, your code will be merged - thank you for improving Open Interpreter!
+- Once approved, your code will be merged - thank you for improving Celaya Interpreter!
 
 ## Running Your Local Fork
 

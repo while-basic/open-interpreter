@@ -1,6 +1,6 @@
 # Code-Llama on Windows
 
-When running Open Interpreter on Windows with Code-Llama (either because you did
+When running Celaya Interpreter on Windows with Code-Llama (either because you did
 not enter an OpenAI API key or you ran `interpreter --local`) you may encounter
 an error similar to the following.
 
